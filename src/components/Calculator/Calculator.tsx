@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import Input from "./Input";
-import Button from "./Button";
-import { sumAllFees, deliveryFee } from "../utils/operations";
-
-// NOTE intenta crear un archivo con Types, donde definas los tipos de variables que usas, y las funciones. Asi dejarias el codigo mas limpio, y usarias mas el potencial de TS
+import Input from "../Input/Input";
+import Button from "../Button/Button";
+import { deliveryFee } from "../../utils/operations";
 
 function Calculator() {
   const [valueCart, setValueCart] = useState(0);
@@ -11,41 +9,11 @@ function Calculator() {
   const [valueAmount, setValueAmount] = useState(0);
   const [valueTime, setValueTime] = useState("");
   const [result, setResult] = useState(0);
-  console.log("valueCart>>>", valueCart);
-  console.log("valueDistance>>>", valueDistance);
-  console.log("valueAmount>>>", valueAmount);
-  console.log("valueTime>>>", valueTime);
-
-  // 5. FINAL DELIVERY FEE
-  // const deliveryFee = (
-  //   cartValue: number,
-  //   deliveryDistance: number,
-  //   items: number,
-  //   time: string
-  // ) => {
-  //   // console.log("TYPE>>>", typeof time)
-  //   let totalFees = sumAllFees(cartValue, deliveryDistance, items, time);
-  //   //  console.log("totalFeesTYPE", typeof totalFees)
-
-  //   if (totalFees > 15) {
-  //     setResult(15);
-  //     return;
-  //   }
-  //   if (totalFees >= 100) {
-  //     setResult(0);
-  //     return;
-  //   }
-  //   console.log("totalFees", totalFees);
-  //   setResult(totalFees);
-  //   return;
-  // };
-  // console.log("deliveryFee>>>", deliveryFee(20, 900, 4, "2023-01-27T18:07"))
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     deliveryFee(valueCart, valueDistance, valueAmount, valueTime);
-    setResult(deliveryFee(valueCart, valueDistance, valueAmount, valueTime))
-    // console.log("button clicked");
+    setResult(deliveryFee(valueCart, valueDistance, valueAmount, valueTime));
   };
 
   const handleReset = (e: React.MouseEvent) => {
@@ -55,7 +23,6 @@ function Calculator() {
     setValueAmount(0);
     setValueTime("");
     setResult(0);
-    // console.log("button clicked");
   };
 
   return (
@@ -67,7 +34,7 @@ function Calculator() {
             value={valueCart}
             setValue={setValueCart}
             name="cart"
-            min="0" // property "min" do not permit negative values on the arrows
+            min="0"
             type="number"
           />
           <div className="flex justify-self-end absolute ml-32">
@@ -107,6 +74,7 @@ function Calculator() {
           setValue={setValueTime}
           name="time"
           type="datetime-local"
+          min="2023-01-23T00:00"
         />
         <br />
         <Button
