@@ -26,14 +26,14 @@ function Calculator() {
   };
 
   return (
-    <div className="m-4">
+    <div className="mx-6 my-4 md:mx-16 lg:mx-24 xl:mx-48">
       <form className="form">
         <p className="p">Cart Value:</p>
         <div className="flex flex-row justify-center relative">
           <Input
             value={valueCart}
             setValue={setValueCart}
-            name="cart"
+            id="cart"
             min="0"
             type="number"
           />
@@ -47,7 +47,7 @@ function Calculator() {
           <Input
             value={valueDistance}
             setValue={setValueDistance}
-            name="distance"
+            id="distance"
             type="number"
             min="0"
             step={100}
@@ -62,7 +62,7 @@ function Calculator() {
           <Input
             value={valueAmount}
             setValue={setValueAmount}
-            name="amount"
+            id="amount"
             type="number"
             min="0"
           />
@@ -72,7 +72,7 @@ function Calculator() {
         <Input
           value={valueTime}
           setValue={setValueTime}
-          name="time"
+          id="time"
           type="datetime-local"
           min="2023-01-23T00:00"
         />

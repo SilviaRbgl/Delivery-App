@@ -7,7 +7,7 @@ describe("Input", () => {
   it("should render input element", () => {
     render(
       <Input
-        name={"cart"}
+        id={"cart"}
         value={3}
         setValue={mockedSetValue}
         type="number"

@@ -1,5 +1,5 @@
 type InputProps = {
-  name: string;
+  id: string;
   value: number | string;
   setValue: React.Dispatch<React.SetStateAction<any>>;
   className?: string;
@@ -8,7 +8,7 @@ type InputProps = {
   min?: string;
 };
 
-function Input({ name, value, setValue, type, min, step }: InputProps) {
+function Input({ id, value, setValue, type, min, step }: InputProps) {
   return (
     <div className="input-container">
       <input
@@ -20,7 +20,7 @@ function Input({ name, value, setValue, type, min, step }: InputProps) {
             ? setValue(e.target.valueAsNumber)
             : setValue(e.target.value);
         }}
-        name={name}
+        id={id}
         type={type}
         className="input"
         placeholder="Enter value"

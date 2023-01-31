@@ -20,7 +20,7 @@
 }
 
 .form {
-  @apply bg-white text-center rounded-full overflow-hidden shadow-md p-14;
+  @apply bg-white text-center rounded-full overflow-hidden shadow-md p-14 mb-6;
 }
 
 /* RESET */
