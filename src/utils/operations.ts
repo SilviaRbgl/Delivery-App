@@ -1,10 +1,11 @@
 // 1. CART VALUE OPERATION
 export const cartValueFeeOperation = (cartValue: number) => {
   let surcharge = 0;
-  if (surcharge < 0) {
+
+  if (cartValue === 0) {
     surcharge = 0;
   }
-  if (cartValue <= 10) {
+  if (cartValue > 0 && cartValue <= 10) {
     surcharge = 10 - cartValue;
   }
   if (cartValue > 10) {
@@ -79,19 +80,25 @@ export const sumAllFees = (
 
   let sumCartDistanceItems = cartValueFee + distanceFee + amountItemsFee;
 
-  if (isRushHour === true) {
+  if (isRushHour === true && cartValueFee > 0) {
     return +(sumCartDistanceItems * 1.2).toFixed(2);
   } else {
     return +sumCartDistanceItems;
   }
 };
 
+// 5. FINAL DELIVERY FEE
 export const deliveryFee = (
   cartValue: number,
   deliveryDistance: number,
   items: number,
   time: string
 ) => {
+
+  cartValue = isNaN(cartValue) ? 0 : cartValue;
+  deliveryDistance = isNaN(deliveryDistance) ? 0 : deliveryDistance;
+  items = isNaN(items) ? 0 : items;
+
   let totalFees = sumAllFees(cartValue, deliveryDistance, items, time);
 
   if (totalFees > 15 && totalFees < 100) {

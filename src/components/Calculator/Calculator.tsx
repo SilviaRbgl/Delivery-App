@@ -9,6 +9,10 @@ function Calculator() {
   const [valueAmount, setValueAmount] = useState(0);
   const [valueTime, setValueTime] = useState("");
   const [result, setResult] = useState(0);
+  console.log("valueCart", valueCart)
+  console.log("valueDistance", valueDistance)
+  console.log("valueAmount", valueAmount)
+  console.log("valueTime", valueTime)
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -33,7 +37,7 @@ function Calculator() {
           <Input
             value={valueCart}
             setValue={setValueCart}
-            id="cart"
+            name="cart"
             min="0"
             type="number"
           />
@@ -47,7 +51,7 @@ function Calculator() {
           <Input
             value={valueDistance}
             setValue={setValueDistance}
-            id="distance"
+            name="distance"
             type="number"
             min="0"
             step={100}
@@ -62,7 +66,7 @@ function Calculator() {
           <Input
             value={valueAmount}
             setValue={setValueAmount}
-            id="amount"
+            name="amount"
             type="number"
             min="0"
           />
@@ -72,7 +76,7 @@ function Calculator() {
         <Input
           value={valueTime}
           setValue={setValueTime}
-          id="time"
+          name="time"
           type="datetime-local"
           min="2023-01-23T00:00"
         />

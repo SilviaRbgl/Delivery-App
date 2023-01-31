@@ -8,6 +8,11 @@ import {
 } from "./operations";
 
 describe("check the operation of card value", () => {
+  it("cart value = 0, no surcharge", () => {
+    let res = cartValueFeeOperation(0);
+    expect(res).toBeDefined();
+    expect(res).toEqual(0);
+  });
   it("cart value < 10 has surcharge", () => {
     let res = cartValueFeeOperation(8.9);
     expect(res).toBeDefined();
