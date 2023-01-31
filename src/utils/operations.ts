@@ -87,14 +87,13 @@ export const sumAllFees = (
   }
 };
 
-// 5. FINAL DELIVERY FEE
+// 6. FINAL DELIVERY FEE
 export const deliveryFee = (
   cartValue: number,
   deliveryDistance: number,
   items: number,
   time: string
 ) => {
-
   cartValue = isNaN(cartValue) ? 0 : cartValue;
   deliveryDistance = isNaN(deliveryDistance) ? 0 : deliveryDistance;
   items = isNaN(items) ? 0 : items;

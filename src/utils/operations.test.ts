@@ -90,6 +90,11 @@ describe("check the operation of the sum of all fees", () => {
     expect(res).toBeDefined();
     expect(res).toEqual(3.3);
   });
+    it("fees with rush hour but no cart value", () => {
+    let res = sumAllFees(0, 0, 0, "2023-02-03T18:07");
+    expect(res).toBeDefined();
+    expect(res).toEqual(1);
+  });
 });
 
 describe("check the operation of the final delivery fee", () => {
