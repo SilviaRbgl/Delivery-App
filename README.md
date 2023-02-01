@@ -10,10 +10,10 @@ You will need node and npm installed globally on your machine.
 1. Unzip the folder and open it in your editor.\
 
 2. Open the terminal and install npm packages.\
-   npm install
+   `npm install`
 
 3. Start the server.\
-   npm start
+   `npm start`
 
 4. Run the app in the development mode.\
    Open [http://localhost:3000](http://localhost:3000) to view it in the browser.\

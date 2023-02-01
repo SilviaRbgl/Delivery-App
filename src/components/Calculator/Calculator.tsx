@@ -9,10 +9,6 @@ function Calculator() {
   const [valueAmount, setValueAmount] = useState(0);
   const [valueTime, setValueTime] = useState("");
   const [result, setResult] = useState(0);
-  console.log("valueCart", valueCart)
-  console.log("valueDistance", valueDistance)
-  console.log("valueAmount", valueAmount)
-  console.log("valueTime", valueTime)
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
