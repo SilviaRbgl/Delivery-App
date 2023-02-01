@@ -7,16 +7,16 @@ For styling the app, I used Tailwind, a utility-first CSS framework packed with 
 
 You will need node and npm installed globally on your machine.
 
-1. Unzip the folder and open it in your editor.\
+- Unzip the folder and open it in your editor.
 
-2. Open the terminal and install npm packages.\
-   `npm install`
+- Open the terminal and install npm packages.
+  `npm install`
 
-3. Start the server.\
-   `npm start`
+- Start the server.
+  `npm start`
 
-4. Run the app in the development mode.\
-   Open [http://localhost:3000](http://localhost:3000) to view it in the browser.\
+- Run the app in the development mode.
+  Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Test
 
